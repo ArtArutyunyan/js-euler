@@ -15,3 +15,13 @@ while(prev < 4000000) {
 
 
 /* Task N3 */
+function getBiggestDivider(number)
+{
+  let divider = 2;
+  while(number != divider){
+    number % divider === 0 ? number = number / divider : divider++;
+  }
+  return divider;
+}
+
+console.log(getBiggestDivider(600851475143));
