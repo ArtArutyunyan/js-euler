@@ -24,4 +24,31 @@ function getBiggestDivider(number)
   return divider;
 }
 
-console.log(getBiggestDivider(600851475143));
+// console.log(getBiggestDivider(600851475143));
+
+
+/* Task N3 */
+function isPalindrome(number) {
+  let reversed = String(number).split('').reverse().join('');
+  return Number(reversed) === number;
+}
+
+function largestPalindrome(n) {
+  let highest = 0;
+  let largestNum = '9';
+  largestNum += Number(largestNum.repeat(n - 1));
+  largestNum = Number(largestNum);
+	
+  for (let i = largestNum; i > 0; i--) {
+    for (let j = largestNum; j > 0; j--) {
+      let number = i * j;
+      if (isPalindrome(number)) {
+        if (number > highest) highest = number;
+        break;
+      }
+    }
+  }
+  return highest;
+}
+
+console.log(largestPalindrome(3));
