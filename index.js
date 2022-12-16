@@ -51,4 +51,19 @@ function largestPalindrome(n) {
   return highest;
 }
 
-console.log(largestPalindrome(3));
+// console.log(largestPalindrome(3));
+
+/* Task N6 */
+function getSumSquares(count) {
+  let sumSquare = 0;
+  let sum = 0;
+  for(var i = 1; i <= count; i++){
+    var square = Math.pow(i, 2);
+    sumSquare += square;
+    sum += i;
+  }
+
+  return  Math.pow(sum, 2) - sumSquare;
+}
+
+console.log(getSumSquares(100));
