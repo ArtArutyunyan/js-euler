@@ -1,9 +1,32 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euler project</title>
   </head>
   <body>
-    <script src="index.js"></script>
+    <script>
+      (() => {
+        console.time("TIME")
+        let a = 1;
+        let b = 2;
+        let c = Math.sqrt(a*a + b*b);
+        let sum = a+b+c;
+        while(sum != 1000){
+            if(sum > 1000){
+                a++;
+                b = a+1;
+            } else {
+                b++;
+            }
+            c = Math.sqrt(a*a + b*b);
+            sum = a + b + c;
+        }
+        console.timeEnd("TIME")
+      })()
+    </script>
   </body>
 </html>
